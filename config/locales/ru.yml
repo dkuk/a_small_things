@@ -1,0 +1,3 @@
+# English strings go here for Rails i18n
+ru:
+  start_date_end_date_etimated_hours_error: "Дата окончания не должна быть раньше даты начала плюс (оценка времени/8) дней."
