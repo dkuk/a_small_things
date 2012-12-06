@@ -9,6 +9,8 @@ end
 
 Rails.application.config.to_prepare do
   Issue.send(:include, ASmallThings::IssuePatch)
+  WelcomeController.send(:include, ASmallThings::WelcomeControllerPatch)
+  IssuesHelper.send(:include, ASmallThings::IssuesHelperPatch)
 end
 
 require 'a_small_things/view_hooks'
