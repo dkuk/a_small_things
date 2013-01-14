@@ -1,48 +1,48 @@
-$(document).ready(function(){
+jQuery(document).ready(function(){
   /*jQuery('input.issue_estimated_hours, input.estimated_hours').live('input', function(){
       calcDueDate();  
     });*/
-  $(document.body).on("click", "input.issue_due_date", function(){
-      $(this).data('set_auto_val', false);
-      $(this).removeClass("highlight");
+  jQuery(document.body).on("click", "input.issue_due_date", function(){
+      jQuery(this).data('set_auto_val', false);
+      jQuery(this).removeClass("highlight");
     });
 
-  $('td.project>a').each(function(index){
-    $(this).parent().html($(this).html());
+  jQuery('td.project>a').each(function(index){
+    jQuery(this).parent().html(jQuery(this).html());
   });
 
-  $('a.icon').each(function(index){
-    $(this).html('<span>'+$(this).html()+'</span>');
+  jQuery('a.icon').each(function(index){
+    jQuery(this).html('<span>'+jQuery(this).html()+'</span>');
   });
   
-  $('tr.hascontextmenu').removeClass('hascontextmenu');
+  jQuery('tr.hascontextmenu').removeClass('hascontextmenu');
 
-  $('#ajax-indicator').remove(); //style.opacity = 0;
+  jQuery('#ajax-indicator').remove(); //style.opacity = 0;
 
-  $('#sidebar').children('a[href$="issues?set_filter=1"]').each(function(index){
-    $(this).prev('h3').remove();
-    $(this).remove();
+  jQuery('#sidebar').children('a[href$="issues?set_filter=1"]').each(function(index){
+    jQuery(this).prev('h3').remove();
+    jQuery(this).remove();
   });
 
-  $('#sidebar').children('a[href$="gantt"]').remove();
-  $('#sidebar').children('a[href$="report"]').next().remove();
+  jQuery('#sidebar').children('a[href$="gantt"]').remove();
+  jQuery('#sidebar').children('a[href$="report"]').next().remove();
 
-  $("#attributes select[name*=assigned_to_id] option:contains(' мне ')").each(function(){
-    $(this).remove();
+  jQuery("#attributes select[name*=assigned_to_id] option:contains(' мне ')").each(function(){
+    jQuery(this).remove();
   });
 
-  $(document.body).on('click', 'form[data-remote="true"] input[type=submit], a.icon-del[data-remote="true"]', function(){  
-    $(this).after('<div class="loader"></div>');
-    $(this).hide();
+  jQuery(document.body).on('click', 'form[data-remote="true"] input[type=submit], a.icon-del[data-remote="true"], a[data-remote=true]', function(){  
+    jQuery(this).after('<div class="loader"></div>');
+    jQuery(this).hide();
   });
 
 });
 
 function checkDueDateCalcIsHandy()
   {
-    var start_date=$('input.issue_start_date');
-    var due_date=$('input.issue_due_date');
-    var estimated_hours=$('input.issue_estimated_hours');
+    var start_date=jQuery('input.issue_start_date');
+    var due_date=jQuery('input.issue_due_date');
+    var estimated_hours=jQuery('input.issue_estimated_hours');
     if(start_date && estimated_hours && due_date ) {
       if(due_date.val()=='' || due_date.data('set_auto_val') ) {
         if(/^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$/.test(start_date.val()) && /^[0-9\.]{1,}$/.test(estimated_hours.val()))
