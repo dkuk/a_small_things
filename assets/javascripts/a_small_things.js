@@ -12,7 +12,9 @@ $(document).ready(function(){
   });
 
   $('a.icon').each(function(index){
-    $(this).html('<span>'+$(this).html()+'</span>');
+    if($(this).html() == $(this).text()) {
+      $(this).html('<span>'+$(this).html()+'</span>');
+    }
   });
   
   $('tr.hascontextmenu').removeClass('hascontextmenu');
