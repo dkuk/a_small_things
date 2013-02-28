@@ -2,6 +2,10 @@ $(document).ready(function(){
   /*jQuery('input.issue_estimated_hours, input.estimated_hours').live('input', function(){
       calcDueDate();  
     });*/
+  $('select.select2').select2({
+     width: '250px'
+  });
+
   $(document.body).on("click", "input.issue_due_date", function(){
       $(this).data('set_auto_val', false);
       $(this).removeClass("highlight");
