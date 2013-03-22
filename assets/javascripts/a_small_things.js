@@ -37,10 +37,33 @@ $(document).ready(function(){
     $(this).remove();
   });
 
-  $(document.body).on('click', 'form[data-remote="true"] input[type=submit], a.icon-del[data-remote="true"]', function(){  
-    $(this).after('<div class="loader"></div>');
-    $(this).hide();
+  // $(document.body).on('click', 'form[data-remote="true"] input[type=submit], a.icon-del[data-remote="true"]', function(){  
+  //   $(this).after('<div class="loader"></div>');
+  //   $(this).hide();
+  // });
+
+  $(document.body).on('click', 'form[data-remote="true"] input[type=submit], a.icon-del[data-remote="true"], a.show_loader[data-remote="true"]', function(){  
+    // $(this).after('<div class="loader" style="width:'+$(this).outerWidth().toString()+'px;"></div>');
+    // $(this).hide();
+    jQuery(document.body).data('ajax_emmiter', jQuery(this))
   });
+
+  $(document).ajaxStart(function() {
+    // alert('ajax started')
+    obj = jQuery(document.body).data('ajax_emmiter')
+    if(typeof obj != 'undefined') {
+      obj.after('<div class="loader" style="width:'+obj.outerWidth().toString()+'px; box-sizing: border-box; display: inline-block;"></div>');
+      obj.addClass('ajax_hidden_emmiter');
+      obj.hide();
+    }
+    jQuery(document.body).data('ajax_emmiter', undefined)
+  });
+
+  $(document).ajaxStop(function() {
+    // alert('ajax_ready')
+    jQuery("div.loader:empty").remove();
+    jQuery('.ajax_hidden_emmiter').show();
+  });  
 
 });
 
