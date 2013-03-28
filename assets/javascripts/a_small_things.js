@@ -52,7 +52,7 @@ $(document).ready(function(){
     // alert('ajax started')
     obj = jQuery(document.body).data('ajax_emmiter')
     if(typeof obj != 'undefined') {
-      obj.after('<div class="loader" style="width:'+obj.outerWidth().toString()+'px; box-sizing: border-box; display: inline-block;"></div>');
+      obj.after('<div class="loader" style="width:'+obj.outerWidth().toString()+'px; height: '+obj.outerHeight().toString()+'px;"></div>');
       obj.addClass('ajax_hidden_emmiter');
       obj.hide();
     }
@@ -66,6 +66,16 @@ $(document).ready(function(){
   });  
 
 });
+
+// walk-around for non-working rails confirm in some cases (like for a.show_loader[data-remote="true"] - return false does not stop event)
+function hard_confirm(label,event) {
+  if(!confirm(label)){
+    event.stopPropagation();
+    return false;
+  }
+  return true;
+}
+
 
 function checkDueDateCalcIsHandy()
   {

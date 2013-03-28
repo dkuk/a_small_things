@@ -4,5 +4,6 @@ div.loader {
   background-image: url(../images/loader.gif); 
   background-repeat: no-repeat;
   display: inline-block;
-  margin-bottom: -4px;  
+  margin-bottom: -4px;
+  box-sizing: border-box;
 }
