@@ -7,3 +7,12 @@ div.loader {
   margin-bottom: -4px;
   box-sizing: border-box;
 }
+
+
+.loader.form_loader {
+  cursor: pointer;
+  background-position: 0px 0px;
+  margin: 70px auto;
+  display: block;
+  box-sizing: content-box;
+}
