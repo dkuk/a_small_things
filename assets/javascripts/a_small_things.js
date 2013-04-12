@@ -15,11 +15,6 @@ $(document).ready(function(){
     $(this).parent().html($(this).html());
   });
 
-  $('a.icon').each(function(index){
-    if($(this).html() == $(this).text()) {
-      $(this).html('<span>'+$(this).html()+'</span>');
-    }
-  });
   
   $('tr.hascontextmenu').removeClass('hascontextmenu');
 
