@@ -3,7 +3,7 @@ $(document).ready(function(){
       calcDueDate();  
     });*/
   $('select.select2').select2({
-     width: '250px'
+     width: '400px'
   });
 
   $(document.body).on("click", "input.issue_due_date", function(){
