@@ -2,6 +2,21 @@ $(document).ready(function(){
   /*jQuery('input.issue_estimated_hours, input.estimated_hours').live('input', function(){
       calcDueDate();  
     });*/
+
+  $('#add_filter_select, #available_columns, #group_by, #query_sort_criteria_attribute_0, #query_sort_criteria_attribute_1, #query_sort_criteria_attribute_2').each(function(){
+    $(this).children('option').sort(function(a, b){    
+            if ($(a).text() == 'NA') 
+                {
+                return 1;   
+                }
+            else if ($(b).text() == 'NA') 
+                {
+                return -1;   
+                }       
+            return ($(a).text().toLowerCase() > $(b).text().toLowerCase()) ? 1 : -1;
+          }).appendTo($(this));
+    })
+
   $('select.select2').select2({
      width: '400px'
   });
