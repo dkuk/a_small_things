@@ -4,6 +4,7 @@ $(document).ready(function(){
     });*/
 
   $('#add_filter_select, #available_columns, #group_by, #query_sort_criteria_attribute_0, #query_sort_criteria_attribute_1, #query_sort_criteria_attribute_2').each(function(){
+    var selected = $(this).children('option:selected') //Only for firefox
     $(this).children('option').sort(function(a, b){    
             if ($(a).text() == 'NA') 
                 {
@@ -15,7 +16,9 @@ $(document).ready(function(){
                 }       
             return ($(a).text().toLowerCase() > $(b).text().toLowerCase()) ? 1 : -1;
           }).appendTo($(this));
+    selected.attr("selected", "selected")  //Only for firefox
     })
+
 
   $('select.select2').select2({
      width: '400px'
