@@ -316,6 +316,7 @@ Version: @@ver@@ Timestamp: @@timestamp@@
     list-style: none;
     display: list-item;
     height: 1.7em; /* changed */
+    overflow: hidden; /* added */
 }
 
 .select2-results li.select2-result-with-children > .select2-result-label {
