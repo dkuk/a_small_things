@@ -3,6 +3,18 @@ $(document).ready(function(){
       calcDueDate();  
     });*/
 
+  $('.contextual').next('div[style*="clear: both"]').remove().end().prev('div[style*="clear: both"]').remove()
+
+  var contextual = $('#update').prev('.contextual')
+  if(contextual.length>0)
+    {
+    $("<div/>", {"class": "H"}).insertBefore('#history').append($('#issue-changesets'), $('#history'));
+    $("<div/>", {"class": "H"}).insertBefore('#update').append(contextual);
+
+    //$('#update').before("<div>"+contextual.html()+"</div>")
+    //contextual.remove()
+    }
+
   $('#add_filter_select, #available_columns, #group_by, #query_sort_criteria_attribute_0, #query_sort_criteria_attribute_1, #query_sort_criteria_attribute_2').each(function(){
     var selected = $(this).children('option:selected') //Only for firefox
     $(this).children('option').sort(function(a, b){    
