@@ -1,3 +1,4 @@
 # English strings go here for Rails i18n
 en:
-  my_label: "My label"
+  start_date_end_date_etimated_hours_error: "End date should not be earlier than the start date plus (time estimate / 8) days."
+
