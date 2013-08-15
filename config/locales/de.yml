@@ -1,0 +1,4 @@
+# German strings go here for Rails i18n
+de:
+  start_date_end_date_etimated_hours_error: "Das Abgabedatum darf nicht vor dem Beginndatum+(Zeitschätzung/8) liegen."
+
