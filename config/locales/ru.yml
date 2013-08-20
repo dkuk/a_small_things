@@ -1,3 +1,4 @@
 # English strings go here for Rails i18n
 ru:
-  start_date_end_date_etimated_hours_error: "Дата окончания не должна быть раньше даты начала плюс (оценка времени/8) дней."
+  settings_enable_select2_lib: "Загружать библиотеку select2"
+  settings_enable_highcharts_lib: "Загружать библиотеку highcharts"  

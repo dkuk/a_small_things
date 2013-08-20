@@ -1,6 +1,11 @@
-<%= javascript_include_tag 'highcharts.js', :plugin => :a_small_things %>
-<%= javascript_include_tag :a_small_things, :plugin => :a_small_things %>
-<%= stylesheet_link_tag :a_small_things, :plugin => :a_small_things %>
+<% defaults = Redmine::Plugin::registered_plugins[:a_small_things].settings[:default] %>
 
-<%= javascript_include_tag 'select2', :plugin => :a_small_things %>
-<%= stylesheet_link_tag :select2, :plugin => :a_small_things %>
+<% if Setting.plugin_a_small_things['enable_highcharts_lib'] || defaults['enable_highcharts_lib'] %>
+  <%= javascript_include_tag 'highcharts.js', :plugin => :a_small_things %>
+<% end %>
+
+<% if Setting.plugin_a_small_things['enable_select2_lib'] || defaults['enable_select2_lib'] %>
+  <%= javascript_include_tag 'select2', :plugin => :a_small_things %>
+  <%= stylesheet_link_tag :select2, :plugin => :a_small_things %>
+  <%= javascript_include_tag :a_small_things, :plugin => :a_small_things %>
+<% end %>
