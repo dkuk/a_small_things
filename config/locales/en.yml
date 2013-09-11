@@ -2,4 +2,4 @@
 en:
   settings_enable_select2_lib: "Enable to load select2 library"
   settings_enable_highcharts_lib: "Enable to load highcharts library"
-
+  plugin_test_a_small_things: "a_small_things"
